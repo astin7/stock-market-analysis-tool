@@ -5,14 +5,14 @@ import pandas_ta as ta
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
 
-# --- Page Configuration ---
+# Page Configuration
 st.set_page_config(
     page_title="Advanced Stock Analysis",
     page_icon="📈",
     layout="wide"
 )
 
-# --- Caching Data ---
+# Caching Data
 @st.cache_data
 def load_data(ticker: str, start_date: datetime, end_date: datetime) -> pd.DataFrame:
     """
@@ -45,7 +45,7 @@ def load_data(ticker: str, start_date: datetime, end_date: datetime) -> pd.DataF
         st.error(f"Error loading data for {ticker}: {e}")
         return pd.DataFrame()
 
-### NEW ### - Function to load data for multiple popular stocks
+# Function to load data for multiple popular stocks
 @st.cache_data
 def load_popular_stocks_data(tickers: list, start_date: datetime, end_date: datetime) -> pd.DataFrame:
     """
@@ -58,7 +58,7 @@ def load_popular_stocks_data(tickers: list, start_date: datetime, end_date: date
         st.error(f"Error loading popular stock data: {e}")
         return pd.DataFrame()
 
-# --- Backtesting Function (no changes here) ---
+# Backtesting Function 
 @st.cache_data
 def run_backtest(data: pd.DataFrame, initial_capital: float = 10000.0) -> pd.DataFrame:
     """
@@ -76,8 +76,7 @@ def run_backtest(data: pd.DataFrame, initial_capital: float = 10000.0) -> pd.Dat
     
     return portfolio
 
-# --- UI Layout ---
-
+# UI Layout 
 # Sidebar for user inputs (for single stock analysis)
 st.sidebar.header("⚙️ Single Stock Analysis")
 ticker = st.sidebar.text_input("Stock Ticker", "AAPL").upper()
@@ -87,7 +86,7 @@ end_date_single = st.sidebar.date_input("End Date", datetime.now())
 # Main content area
 st.title("📈 Advanced Stock Analysis Dashboard")
 
-### NEW ### - Top Market Movers Overview Section
+# Top Market Movers Overview Section
 st.subheader("📊 Top Market Movers Overview")
 popular_tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'NVDA', 'JPM', 'V']
 
@@ -121,7 +120,7 @@ if len(overview_range) == 2:
 # Visual separator
 st.divider()
 
-# --- Single Stock Analysis Section (moved down) ---
+# Single Stock Analysis Section
 st.header(f"Deep Dive Analysis for: {ticker}")
 
 # Load data for the single selected stock
@@ -142,7 +141,7 @@ else:
     col2.metric("52-Week High", f"${df['High'].max():,.2f}")
     col3.metric("52-Week Low", f"${df['Low'].min():,.2f}")
 
-    # --- Interactive Price Chart ---
+    # Interactive Price Chart
     st.subheader("Price Chart with Technical Indicators")
     fig_price = go.Figure()
     
@@ -168,7 +167,7 @@ else:
     )
     st.plotly_chart(fig_price, use_container_width=True)
     
-    # --- Technical Indicator Subplots ---
+    # Technical Indicator Subplots
     st.subheader("Technical Indicators")
     
     fig_rsi = go.Figure()
@@ -185,7 +184,7 @@ else:
     fig_macd.update_layout(title='MACD', yaxis_title='Value')
     st.plotly_chart(fig_macd, use_container_width=True)
 
-    # --- Backtesting Section ---
+    # Backtesting Section
     st.subheader("✨ Golden Cross Strategy Backtest")
     st.markdown("""
     This backtest simulates a simple trading strategy:
@@ -211,6 +210,6 @@ else:
     fig_portfolio.update_layout(title='Portfolio Value Over Time', yaxis_title='Portfolio Value (USD)')
     st.plotly_chart(fig_portfolio, use_container_width=True)
 
-    # --- Raw Data Display ---
+    # Raw Data Display
     with st.expander("View Raw Data"):
         st.dataframe(df.style.format("{:.2f}"))
