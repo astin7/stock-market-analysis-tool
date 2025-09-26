@@ -78,16 +78,16 @@ def run_backtest(data: pd.DataFrame, initial_capital: float = 10000.0) -> pd.Dat
 
 # UI Layout 
 # Sidebar for user inputs (for single stock analysis)
-st.sidebar.header("⚙️ Single Stock Analysis")
+st.sidebar.header("Single Stock Analysis ⚙️")
 ticker = st.sidebar.text_input("Stock Ticker", "AAPL").upper()
 start_date_single = st.sidebar.date_input("Start Date", datetime(2020, 1, 1))
 end_date_single = st.sidebar.date_input("End Date", datetime.now())
 
 # Main content area
-st.title("📈 Advanced Stock Analysis Dashboard")
+st.title("Advanced Stock Analysis Dashboard 📈")
 
 # Top Market Movers Overview Section
-st.subheader("📊 Top Market Movers Overview")
+st.subheader("Top Market Movers Overview 📊")
 popular_tickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'NVDA', 'JPM', 'V']
 
 # Date range picker for the popular stocks chart
@@ -185,7 +185,7 @@ else:
     st.plotly_chart(fig_macd, use_container_width=True)
 
     # Backtesting Section
-    st.subheader("✨ Golden Cross Strategy Backtest")
+    st.subheader("Golden Cross Strategy Backtest")
     st.markdown("""
     This backtest simulates a simple trading strategy:
     - **Buy Signal:** When the 50-day Simple Moving Average (SMA50) crosses **above** the 200-day SMA.
