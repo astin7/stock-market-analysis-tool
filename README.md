@@ -31,7 +31,7 @@ Follow these instructions to get a local copy of the project up and running.
 1.  **Clone the repository:**
 2.  **Create and activate a virtual environment (recommended):**
 3.  **Install the required dependencies:**
-4.  **Run the Streamlit application:**
+4.  **Run the Streamlit application with "streamlit run app.py":**
 ---
 ## Usage
 1.  Use the date range picker at the top of the page to adjust the time frame for the **Market Overview** chart.
