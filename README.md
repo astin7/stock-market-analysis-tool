@@ -2,23 +2,23 @@
 A comprehensive, interactive web application for stock market analysis built with Python and Streamlit. This dashboard provides an overview of a high-level market and allows users to complete a deep-dive analysis on individual stocks, including technical indicators and strategy backtesting.
 ---
 ## Features
-* **Market Overview Dashboard: Instantly compare the normalized performance of top market-leading stocks (e.g., AAPL, MSFT, GOOGL) over a customizable time frame to gauge overall market trends.
+* **Market Overview Dashboard:** Instantly compare the normalized performance of top market-leading stocks (e.g., AAPL, MSFT, GOOGL) over a customizable time frame to gauge overall market trends.
 * **Deep Dive Analysis:** Focus on any single stock by entering its ticker symbol for detailed analysis.
-* **Interactive Visualizations: Candlestick charts with zooming, panning, and hover-over details, powered by `Plotly`.
-* **Customizable Technical Indicators: Overlay popular indicators on the price chart, including:
+* **Interactive Visualizations:** Candlestick charts with zooming, panning, and hover-over details, powered by `Plotly`.
+* **Customizable Technical Indicators:** Overlay popular indicators on the price chart, including:
     * 50-Day & 200-Day Simple Moving Averages (SMA)
     * Relative Strength Index (RSI)
     * Moving Average Convergence Divergence (MACD)
-* **Advanced Backtesting Engine: Implements a "Golden Cross" (SMA50/SMA200 crossover) trading strategy to quantitatively assess its performance against a simple "buy and hold" approach.
-* **Intuitive UI: A clean and responsive user interface built with Streamlit, featuring a top-level overview and a sidebar for detailed single-stock analysis.
+* **Advanced Backtesting Engine:** Implements a "Golden Cross" (SMA50/SMA200 crossover) trading strategy to quantitatively assess its performance against a simple "buy and hold" approach.
+* **Intuitive UI:** A clean and responsive user interface built with Streamlit, featuring a top-level overview and a sidebar for detailed single-stock analysis.
 ---
 ## Technology Stack
-* **Language: Python
-* **Web Framework: Streamlit
-* **Data Manipulation: Pandas
-* **Data Source: yfinance (Yahoo Finance API)
-* **Technical Analysis: pandas-ta
-* **Interactive Charting: Plotly
+* **Language:** Python
+* **Web Framework:** Streamlit
+* **Data Manipulation:** Pandas
+* **Data Source:** yfinance (Yahoo Finance API)
+* **Technical Analysis:** pandas-ta
+* **Interactive Charting:** Plotly
 ---
 ## Getting Started
 Follow these instructions to get a local copy of the project up and running.
@@ -28,10 +28,10 @@ Follow these instructions to get a local copy of the project up and running.
 * pip package manager
 
 ### Installation
-1.  Clone the repository:**
-2.  Create and activate a virtual environment (recommended):**
-3.  Install the required dependencies:**
-4.  Run the Streamlit application with "streamlit run app.py":**
+1.  **Clone the repository:**
+2.  **Create and activate a virtual environment (recommended):**
+3.  **Install the required dependencies:**
+4.  **Run the Streamlit application with "streamlit run app.py":**
 ---
 ## Usage
 1.  Use the date range picker at the top of the page to adjust the time frame for the **Market Overview** chart.
