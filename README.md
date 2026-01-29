@@ -1,4 +1,4 @@
-# 📈 Advanced Stock Analysis Dashboard
+# Advanced Stock Analysis Dashboard
 A comprehensive, interactive web application for stock market analysis built with Python and Streamlit. This dashboard provides an overview of a high-level market and allows users to complete a deep-dive analysis on individual stocks, including technical indicators and strategy backtesting.
 ---
 ## Features
